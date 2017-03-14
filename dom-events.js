@@ -18,23 +18,24 @@
         };
 
         // Override default click event handler by adding delay to handle double-click event
-        container.onclick = function (e) {
-            clicks++;
-            if(clicks === 1) {
-                timer = setTimeout(function() {
-                    pointer.onContainerClick(e);
-                    clicks = 0;
-                }, DELAY);
-            } else {
-                clearTimeout(timer);
-                clicks = 0;
-            }
-        };
+        // Removed in this fork
+//         container.onclick = function (e) {
+//             clicks++;
+//             if(clicks === 1) {
+//                 timer = setTimeout(function() {
+//                     pointer.onContainerClick(e);
+//                     clicks = 0;
+//                 }, DELAY);
+//             } else {
+//                 clearTimeout(timer);
+//                 clicks = 0;
+//             }
+//         };
 
-        container.ondblclick = function (e) {
-            pointer.onDblClick(e);
-            clicks = 0;
-        };
+//         container.ondblclick = function (e) {
+//             pointer.onDblClick(e);
+//             clicks = 0;
+//         };
     });
 
     if(!H.Pointer.prototype.hasOwnProperty('onContainerContextMenu')) {
