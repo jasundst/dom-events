@@ -2,6 +2,8 @@
 
 Binds Dom Events to actions on Highcharts elements.
 
+This fork was created to reduce the doubleclick wait delay.
+
 ### Usage
 
 Add event handler as any other event handler in Highcharts:
