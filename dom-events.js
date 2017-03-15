@@ -7,19 +7,22 @@
 
         var pointer = this,
             container = pointer.chart.container,
-//             DELAY = 500, clicks = 0, timer = null;
-            DELAY = 5, clicks = 0, timer = null;
+            DELAY = 1, clicks = 0, timer = null;
 
         container.oncontextmenu = function (e) {
             pointer.onContainerContextMenu(e);
+            e.stopPropagation();
+            e.preventDefault();
+            return false;
         };
 
         container.onwheel = function (e) {
             pointer.onWheel(e);
+            e.stopPropagation();
+            e.preventDefault();
         };
 
         // Override default click event handler by adding delay to handle double-click event
-        // Removed in this fork
         container.onclick = function (e) {
             clicks++;
             if(clicks === 1) {
